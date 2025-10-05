@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Login - Blog</title>
-  <link href="/login.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-</head>
+<% layout('/boilerCode/boiler') -%>
 <body>
   
   <div class="container">
@@ -17,20 +10,20 @@
         <div class="login">
             <div class="login-card">
                 <h3>Welcome Back!</h3>
-                <form action="home.html" method="POST">
+                <form action="home.html" method="POST" class="input">
                     
                     <div class="input">
-                        <label for="email">Email Address</label>
+                        <label for="email" class="input">Email Address</label>
                         <input type="email" id="email" name="email" class="login-input" required placeholder="name@example.com">
                     </div>
   
                     
                     <div class="input">
-                        <label for="password">Password</label>
+                        <label for="password" class="input">Password</label>
                         <input type="password" id="password" name="password" class="login-input" required placeholder="Enter your password">
                     </div>
                     
-                    <button type="submit" class="login-button">
+                    <button type="submit" class="login-button input">
                         Log In
                     </button>
                 </form>
@@ -52,35 +45,35 @@
             <h3>Explore Our Core Features</h3>
             <div class="features-grid">
                 
-                <div class="feature-item">
-                    <i class="fas fa-feather-alt"></i>
-                    <h4>Creative Sparks</h4>
-                    <p>Find daily prompts, writing exercises, and visual ideas to ignite your next project.</p>
+                <div class="feature-item ">
+                    <i class="fas fa-feather-alt c"></i>
+                    <h4 class="c">Creative Sparks</h4>
+                    <p class="c">Find daily prompts, writing exercises, and visual ideas to ignite your next project.</p>
                 </div>
                 
                 <div class="feature-item">
-                    <i class="fas fa-palette"></i>
-                    <h4>Aesthetic Curation</h4>
-                    <p>Organize your favorite color palettes, inspirational images, and design layouts into private boards.</p>
+                    <i class="fas fa-palette c"></i>
+                    <h4 class="c">Aesthetic Curation</h4>
+                    <p class="c">Organize your favorite color palettes, inspirational images, and design layouts into private boards.</p>
                 </div>
                 
                 <div class="feature-item">
-                    <i class="fas fa-users"></i>
-                    <h4>Community & Sharing</h4>
-                    <p>Connect with other writers and creators, share your work, and get constructive feedback.</p>
+                    <i class="fas fa-users c"></i>
+                    <h4 class="c">Community & Sharing</h4>
+                    <p class="c">Connect with other writers and creators, share your work, and get constructive feedback.</p>
                 </div>
 
                 <div class="feature-item">
-                    <i class="fas fa-bookmark"></i>
-                    <h4>Save & Organize</h4>
-                    <p>Use our seamless save button to bookmark articles, DIY guides, and short stories for later reading.</p>
+                    <i class="fas fa-bookmark c"></i>
+                    <h4 class="c">Save & Organize</h4>
+                    <p class="c">Use our seamless save button to bookmark articles, DIY guides, and short stories for later reading.</p>
                 </div>
 
             </div>
         </div>
         
         <div class="go-to-blog-section">
-            <button >
+            <button class>
                 Continue to Blog Home Page
             </button>
         </div>
