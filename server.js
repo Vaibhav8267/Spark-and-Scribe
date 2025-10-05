@@ -26,6 +26,11 @@ app.get("/login", (req, res) => {
     res.render("login.ejs");
 });
 
+//gohome 
+app.get("/gohome",(req,res)=>{
+    res.render("home.ejs");
+});
+
 //signup Route
 app.get("/signup", (req, res) => {
     res.render("signup.ejs");
