@@ -127,7 +127,7 @@ body {
     transform: translateY(-1px);
 }
 
-.loginbtn {
+.login-option a{
     color: #cf5b78;
     text-decoration: none;
     font-weight: 600;
@@ -139,7 +139,7 @@ body {
     transition: background-color 0.2s;
 }
 
-.loginbtn:hover {
+.login-option a:hover {
     background-color: #ffc2d1;
     color: white;
     text-decoration: none;
