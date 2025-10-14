@@ -14,8 +14,7 @@ app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
-app.use(express.static(path.join(__dirname,"/css")));
-
+app.use(express.static(path.join(__dirname, 'public')));
 //Home Route
 app.get("/home", (req, res) => {
     res.render("home.ejs");
@@ -25,6 +24,14 @@ app.get("/home", (req, res) => {
 app.get("/login", (req, res) => {
     res.render("login.ejs");
 });
+//Post Rotuer of login
+app.post("/login/home",(req,res)=>{
+    res.render("home");
+});
+//Post Router of Signin
+app.post("/register",(req,res)=>{
+    res.render("home")
+})
 
 //gohome 
 app.get("/gohome",(req,res)=>{
