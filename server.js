@@ -24,6 +24,8 @@ app.get("/home", (req, res) => {
 app.get("/login", (req, res) => {
     res.render("login.ejs");
 });
+
+
 //Post Rotuer of login
 app.post("/login/home",(req,res)=>{
     res.render("home");
@@ -42,7 +44,10 @@ app.get("/gohome",(req,res)=>{
 app.get("/signup", (req, res) => {
     res.render("signup.ejs");
 });
-
+app.get("/about", (req, res) => {
+   
+    res.render("about.ejs"); 
+});
 //Creating Port request
 app.listen(port,()=>{
 console.log(`Server is listening to port : ${port}`);

@@ -1,100 +1,105 @@
-    <div class="centered-content">
-        <div class="about-header">
-            <h2>About Spark and Scribe</h2>
-            <p>Ignite your ideas. Connect with a community of creators.</p>
-        </div>
-        <div class="auth-form-card">
-            <h3 class="card-title section-heading">
-                Core Features
-            </h3>
-            <ul class="feature-list">
-                <li class="feature-item">
-                    <h4 class="feature-icon-title">
-                        <span class="icon-container"><i data-lucide="zap"></i></span> **Real-Time Instant Posting**
-                    </h4>
-                    <p class="feature-description">
-                        Share your thoughts the moment they spark. Your ideas are immediately visible to the entire community.
-                    </p>
-                </li>
-                <li class="feature-item">
-                    <h4 class="feature-icon-title">
-                        <span class="icon-container"><i data-lucide="layout-grid"></i></span> **Elegant Card Display**
-                    </h4>
-                    <p class="feature-description">
-                        Content is organized into a clean, modern card format for effortless reading and navigation.
-                    </p>
-                </li>
-                <li class="feature-item">
-                    <h4 class="feature-icon-title">
-                        <span class="icon-container"><i data-lucide="sidebar"></i></span> **Fixed Sidebar Navigation**
-                    </h4>
-                    <p class="feature-description">
-                        Quick access to Home, About, Sign Up, and Log In pages, always available on the left.
-                    </p>
-                </li>
-                <li class="feature-item">
-                    <h4 class="feature-icon-title">
-                        <span class="icon-container"><i data-lucide="search"></i></span> **Global Content Search**
-                    </h4>
-                    <p class="feature-description">
-                        Use the prominent search bar to filter thoughts by keywords or authors.
-                    </p>
-                </li>
-                <li class="feature-item">
-                    <h4 class="feature-icon-title">
-                        <span class="icon-container"><i data-lucide="smartphone"></i></span> **Fully Responsive Design**
-                    </h4>
-                    <p class="feature-description">
-                        The layout automatically adapts, transforming the vertical sidebar into a horizontal bottom navigation on mobile devices.
-                    </p>
-                </li>
-                <li class="feature-item">
-                    <h4 class="feature-icon-title">
-                        <span class="icon-container"><i data-lucide="user"></i></span> **Attributed and Protected Identity**
-                    </h4>
-                    <p class="feature-description">
-                        Posts are linked to your protected account, ensuring all your thoughts are uniquely attributed to you.
-                    </p>
-                </li>
-            </ul>
+<% layout('/boilerCode/boiler') -%>
+<body>
+    <div class="container">
+        <div class="about-content">
+           
+            <h1>About Spark and Scribe</h1>
+            <p style="text-align: center; font-style: italic; color: var(--color-primary-pink);">
+                "From sparks of thought to words that shine."
+            </p>
+            <p>
+                Spark and Scribe is a dynamic platform dedicated to cultivating original thought and fostering a community of creative writers, thinkers, and sharers. Our mission is to provide an aesthetic, distraction-free space where your ideas can instantly connect with a global audience.
+            </p>
 
-            <h3 class="card-title section-heading">
-                How to Use Spark and Scribe
-            </h3>
-            <ol class="how-to-list">
-                <li>
-                    **Access the Platform:** Use the **Home** button in the sidebar to view the main feed.
+            
+            <h2>Core Features</h2>
+            <div class="feature-grid">
+                
+                <div class="feature-item">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h4>Real-Time Publishing</h4>
+                    <p>Post your thoughts instantly. As soon as you hit publish, your blog post is live and viewable by the entire community.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="fa-solid fa-user-lock"></i>
+                    <h4>Secure Authentication</h4>
+                    <p>Easy and secure sign-up and login process. Your profile is protected, ensuring only you can manage your creations.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h4>Elegant Card Layout</h4>
+                    <p>All blogs are displayed in a clean, modern card format, making the feed visually appealing and easy to scroll through.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h4>Fully Responsive Design</h4>
+                    <p>Enjoy a flawless viewing and writing experience whether you are on a desktop, tablet, or mobile phone.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-palette"></i>
+                    <h4>Aesthetic Interface</h4>
+                    <p>Our soft pink and neutral color palette provides a calm, beautiful background that is pleasing to the eyes.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h4>Centralized Search</h4>
+                    <p>Easily find specific topics, authors, or keywords using the prominent, pill-shaped search bar at the top of the feed.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="fa-solid fa-users"></i>
+                    <h4>Community Focus</h4>
+                    <p>Read, get inspired, and interact with a diverse set of users, turning solo writing into a communal experience.</p>
+                </div>
+
+            </div>
+
+        
+            <h2>How to Use Spark and Scribe</h2>
+            <p>Getting started is quick and intuitive. Follow these simple steps to become a contributing member of our community:</p>
+            <ol class="guide-list">
+                <li class="guide-step">
+                    <span class="guide-number">1</span>
+                    <div class="guide-text">
+                        <strong>Sign Up or Log In:</strong> Click the "Sign Up" icon on the sidebar to create your account, or "Log In" if you are already a member.
+                    </div>
                 </li>
-                <li>
-                    **Join the Community:** Click **Sign Up** or **Log In** from the sidebar to create an account or access your existing one.
+                <li class="guide-step">
+                    <span class="guide-number">2</span>
+                    <div class="guide-text">
+                        <strong>Navigate to the Feed:</strong> Click the "Home Feed" or "Full Blog List" icons to view all published content.
+                    </div>
                 </li>
-                <li>
-                    **Share Your Spark:** Once logged in, navigate to the Home feed. Use the designated posting area (visible in the final version of the application) to type and submit your thoughts instantly.
+                <li class="guide-step">
+                    <span class="guide-number">3</span>
+                    <div class="guide-text">
+                        <strong>Create a Post:</strong> Once logged in, click the "create blog" (<i class="fa-solid fa-plus"></i>) icon on the sidebar to find the publishing form.
+                    </div>
                 </li>
-                <li>
-                    **Browse Content:** Scroll through the card-based feed or use the search bar to find specific topics or authors.
+                <li class="guide-step">
+                    <span class="guide-number">4</span>
+                    <div class="guide-text">
+                        <strong>Publish:</strong> Write your thoughts in the text editor and click the **Post Blog** button. Your content is immediately added to the public feed.
+                    </div>
                 </li>
             </ol>
 
-            <h3 class="card-title section-heading">
-                Benefits of Sparking Here
-            </h3>
+    
+            <h2>Why Choose Spark and Scribe?</h2>
             <ul class="benefits-list">
-                <li>
-                    **Find Your Voice:** A distraction-free, aesthetically pleasing space to practice writing and articulate your ideas.
-                </li>
-                <li>
-                    **Instant Connection:** Bypass complex publishing tools; your message goes straight to the audience.
-                </li>
-                <li>
-                    **Beautiful Presentation:** Your content automatically benefits from a professional, elegant, and fully responsive design.
-                </li>
+                <li>Instantaneous connection with readers worldwide.</li>
+                <li>Clean design minimizes distraction, allowing you to focus purely on writing and reading.</li>
+                <li>The beautiful, fixed sidebar gives easy access to all essential navigation points at all times.</li>
+                <li>A dedicated community aesthetic ensures a pleasant and inspiring user experience.</li>
+                <li>It's the perfect platform to transform fleeting thoughts into lasting pieces of content.</li>
             </ul>
 
         </div>
-        <div class="button-container">
-            <button >
-                <span class="icon-container"><i data-lucide="home"></i></span> Back to the Feed
-            </button>
-        </div>
     </div>
+</body>
+</html>
