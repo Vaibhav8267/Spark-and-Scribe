@@ -124,7 +124,10 @@ app.get("/logout",(req,res,next)=>{
         res.redirect("/login");
     })
 })
-
+//Create new post
+app.get("/create",(req,res)=>{
+  res.render("create.ejs");
+})
 //Creating Port request
 app.listen(port, () => {
   console.log(`Server is listening to port : ${port}`);

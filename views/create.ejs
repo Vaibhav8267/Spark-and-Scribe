@@ -1,0 +1,43 @@
+<% layout('/boilerCode/boiler') -%>
+
+<body>
+    <div class="container">
+         <div id="head">
+                <h2>SPARK AND SCRIBE </h2>
+                <p>From sparks of thought to words that shine.</p>
+            </div>
+       <div class="about-content">
+            <h1>Create a New Post ✨</h1>
+            <p style="text-align: center; font-style: italic; color: var(--color-primary-pink);">
+                "Let the spark flow through the scribe."
+            </p>
+
+            <div class="create-form-container">
+
+                <form action="#" method="POST" class="new-blog-form">
+
+                    <div class="input-group">
+                        <label for="title">Blog Title</label>
+                        <input type="text" id="title" name="blog[title]" placeholder="Give your spark a title" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="imageUrl">Image URL (Optional)</label>
+                        <input type="url" id="imageUrl" name="blog[imageUrl]" placeholder="Paste an image link for your card (e.g., https://...)">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="content">Your Thoughts & Content</label>
+                       
+                        <textarea id="content" name="blog[content]" rows="15" placeholder="Write your words here. Tell your story, share your DIY, or start a discussion..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="post-button">
+                        <i class="fa-solid fa-paper-plane"></i> Post Blog
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
