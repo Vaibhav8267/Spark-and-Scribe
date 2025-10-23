@@ -96,10 +96,10 @@ app.post("/signup", async (req, res) => {
     const newUser = new user({ email, username });
     const regUser = await user.register(newUser, password);
     console.log(regUser);
-    // req.flash("success", "Registred Successfull")
+    req.flash("success", "Registred Successfull")
     res.redirect("/login")
   } catch (e) {
-    // req.flash("error", e.message);
+    req.flash("error", e.message);
     res.redirect("/signup")
   }
   // req.flash("error","Login Successfull")
@@ -115,7 +115,15 @@ app.post("/login", passport.authenticate("local", { failureRedirect: '/login', f
 
 });
 
-
+app.get("/logout",(req,res,next)=>{
+    req.logout((err)=>{
+        if(err){
+          return  next(err);
+        }
+        req.flash("success","Logged Out");
+        res.redirect("/login");
+    })
+})
 
 //Creating Port request
 app.listen(port, () => {
