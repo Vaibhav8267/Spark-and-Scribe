@@ -111,6 +111,12 @@ app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
 app.post("/login", passport.authenticate("local", { failureRedirect: '/login', failureFlash: true }), async (req, res) => {
+  // Mark that user just logged in successfully
+    req.session.justLoggedIn = true;
+
+    // Redirect back to page they came from (if any)
+    const redirectUrl = req.session.returnTo || "/gohome";
+    delete req.session.returnTo;
   res.redirect("/gohome");
 
 });
@@ -124,10 +130,11 @@ app.get("/logout",(req,res,next)=>{
         res.redirect("/login");
     })
 })
-//Create new post
-app.get("/create",(req,res)=>{
-  res.render("create.ejs");
-})
+
+const routep = require("./init/routep.js");
+app.use(routep);
+
+
 //Creating Port request
 app.listen(port, () => {
   console.log(`Server is listening to port : ${port}`);
