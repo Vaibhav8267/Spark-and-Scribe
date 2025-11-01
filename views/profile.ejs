@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= profileUser.username %> | Profile</title>
+  <style>
+    .profile-container {
+      text-align: center;
+      padding: 50px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid pink;
+      margin-bottom: 20px;
+    }
+    .follow-btn {
+      background: #ff7997;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <img src="<%= profileUser.avatar %>" alt="Avatar" class="avatar">
+    <h2>@<%= profileUser.username %></h2>
+
+    <p>📝 Posts: <%= posts.length %></p>
+    <p>👥 Followers: <%= profileUser.followers.length %></p>
+    <p>➡️ Following: <%= profileUser.following.length %></p>
+
+    <% if (profileUser._id.equals(currentUser._id)) { %>
+      <p>This is your profile</p>
+    <% } else { %>
+      <% if (profileUser.followers.some(f => f._id.equals(currentUser._id))) { %>
+        <form action="/user/<%= profileUser.username %>/unfollow" method="POST">
+          <button class="follow-btn">Unfollow</button>
+        </form>
+      <% } else { %>
+        <form action="/user/<%= profileUser.username %>/follow" method="POST">
+          <button class="follow-btn">Follow</button>
+        </form>
+      <% } %>
+    <% } %>
+
+    <h3>Your Posts</h3>
+    <% posts.forEach(p => { %>
+      <div>
+        <h4><%= p.title %></h4>
+        <p><%= p.description %></p>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
