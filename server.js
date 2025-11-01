@@ -33,12 +33,7 @@ const port = 2614;
 //Session Middlewares
 app.use(session(sessionOptions));
 app.use(flash());
-//Flash Messages 
-app.use((req, res, next) => {
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
-  next();
-});
+
 
 //passport
 app.use(passport.initialize());
@@ -46,6 +41,14 @@ app.use(passport.session());//require to know that wheater the same user is send
 passport.use(new LocalStrategy(user.authenticate()));
 passport.serializeUser(user.serializeUser()); //store user data into session
 passport.deserializeUser(user.deserializeUser());
+//Flash Messages 
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
+
 //Middlewares
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -95,6 +98,8 @@ app.post("/signup", async (req, res) => {
     let { username, email, password } = req.body;
     const newUser = new user({ email, username });
     const regUser = await user.register(newUser, password);
+    const UserProfile = require("./model/userprofile");
+    await UserProfile.create({ userId: regUser._id });
     console.log(regUser);
     req.flash("success", "Registred Successfull")
     res.redirect("/login")
@@ -133,6 +138,10 @@ app.get("/logout",(req,res,next)=>{
 
 const routep = require("./init/routep.js");
 app.use(routep);
+
+const uproutes = require("./init/uproutes");
+app.use(uproutes);
+
 
 
 //Creating Port request

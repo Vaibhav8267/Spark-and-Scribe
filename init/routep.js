@@ -12,17 +12,22 @@ router.get("/create", forceLogin, (req, res) => {
 
 // Handle New Post Submission
 router.post("/create", isLoggedIn, async (req, res) => {
-  const { title, description, content, image } = req.body;
-  const newPost = new Post({
-    title,
-    description,
-    content,
-    image,
-    author: req.user._id,
-  });
-  await newPost.save();
-  req.flash("success", "Post created successfully!");
-  res.redirect("/home");
+  try {
+    const { title, imageUrl, content } = req.body.blog;
+    const newPost = new Post({
+      title,
+      image: imageUrl,
+      content,
+      author: req.user._id,
+    });
+    await newPost.save();
+    req.flash("success", "Post created successfully!");
+    res.redirect("/gohome");
+  } catch (err) {
+    console.error("Error creating post:", err);
+    req.flash("error", "Failed to create post. Please fill all required fields.");
+    res.redirect("/create");
+  }
 });
 
 module.exports = router;

@@ -19,11 +19,31 @@
     <link rel="stylesheet" href="/css/login.css">
     <link rel="stylesheet" href="/css/about.css">
     <link rel="stylesheet" href="/css/create.css">
+    <link rel="stylesheet" href="/css/navbar.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    
-    
+    <div class="navbar-user position-absolute top-0 end-0 p-3">
+    <% if (currentUser) { %>
+      <!-- Show user circle when logged in -->
+      <div class="user-avatar-container">
+        <a href="/user/<%= currentUser.username %>">
+          <img src="<%= currentUser.avatar || 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png' %>"
+               alt="User Avatar"
+               class="profile-avatar">
+        </a>
+        <div class="user-hover-card">
+          <p><strong><%= currentUser.username %></strong></p>
+          <p><a href="/logout" class="text-danger text-decoration-none">Logout</a></p>
+        </div>
+      </div>
+    <% } else { %>
+      <!-- Show login link only if NOT logged in -->
+      <a href="/login" class="btn btn-outline-dark rounded-pill px-3 py-1 fw-semibold">
+        Login
+      </a>
+    <% } %>
+  </div>     
     <main class="container">
         <%- include("../includes/flash.ejs") %>
         
